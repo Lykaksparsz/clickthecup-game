@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Click the Cup</title>
+<style>
+body {
+background-color: #f44646;
+color: white;
+font-family: helvetica, sans-serif, arial;
+}
+
+#count {
+font-size: 50px;
+}
+
+.cupz {
+transition: width 2s, height 3s;
+width: 350px; 
+height: 300px;
+}
+
+.cupz:hover {
+width: 360px; 
+height: 320px;
+}
+
+.hide {
+display: none;
+width: 1px;
+height: 1px;
+}
+
+#submitscorebutton {
+background-color: black;
+width: 200px;
+cursor: pointer;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
+<script>
+var Cupped = 0;
+var KongregateUsername = "";
+
+function ClickCup(){
+Cupped += 1
+document.getElementById("count").innerHTML = Cupped;
+}
+
+kongregateAPI.loadAPI(function(){
+window.kongregate = kongregateAPI.getAPI();
+console.log("Successfully Loaded Kongregate API!");
+$("#submitscorebutton").removeClass("hide");
+KongregateUsername = kongregate.service.getUsername();
+console.log("Kongregate Username: " + KongregateUsername);
+});
+
+function submitscorekong() {
+kongregate.stats.submit('Score', Cupped);
+}
+</script>
+</head>
+<body>
+<div class="hide" id="submitscorebutton" onclick="submitscorekong()">Submit score from kongregate</div>
+<br><br><br>
+<center><div id="count"><b>0</b></div></center>
+<br><br><br>
+<center><div id="cup" onclick="ClickCup()"><img class="cupz" src="http://www.ambican.com/media/catalog/product/cache/1/large_image/17f82f742ffe127f42dca9de82fb58b1/g/r/grey_papercup.png" /></div></center>
+</center>
+</body>
+</html>
