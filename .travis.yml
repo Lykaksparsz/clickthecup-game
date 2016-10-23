@@ -1,1 +1,3 @@
 language: html
+notifications:
+  webhooks: https://canary.discordapp.com/api/webhooks/239682163165888513/7nIm78tbsWrRjYvSINAJC7rPm36PR8FCY6lzKBkqyUl1SJgVFi9gXj5Q1mPxhJAHezBx
