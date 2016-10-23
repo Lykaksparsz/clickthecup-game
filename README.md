@@ -1,2 +1,3 @@
 # clickthecup-game
+[![Build Status](https://travis-ci.org/Lykaksparsz/clickthecup-game.svg?branch=master)](https://travis-ci.org/Lykaksparsz/clickthecup-game)
 Clicky clicky... cuppy........
