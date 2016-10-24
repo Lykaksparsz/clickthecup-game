@@ -1,7 +1,2 @@
 general:
   build_dir: api
-
-notify:
-  webhooks:
-    # A list of hook hashes, containing the URL field
-    - url: https://canary.discordapp.com/api/webhooks/240103090710249472/mq1BE3pM2cqAWnMME9GbHpflrYNBJk0RORWJq_vhEjY_Gks6_-M2yUy93Z1ThhS7ctzX/circle
